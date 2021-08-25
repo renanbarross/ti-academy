@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<style>
+	
+	body {
+		margin: 0;
+		padding: 0;
+	}
+
+	header {
+		width: 100%;
+		height: auto;
+		background-color: #000;
+		position: fixed;
+		top: 0;
+		display: flex;
+		flex-direction: row;
+		padding: 5px 0;
+		justify-content: space-around;
+		align-items: center;
+	}
+
+	footer {
+		width: 100%;
+		height: auto;
+		background-color: #000;
+		position: fixed;
+		bottom: 0;
+		display: flex;
+		padding: 30px 0;
+		justify-content: center;
+		align-items: center;
+	}
+
+	ul {
+		width: auto;
+		height: auto;
+		padding: 0;
+		margin: 0;
+		list-style: none;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	li {
+		padding: 10px 40px;
+	}
+
+	li > a {
+		text-decoration: none;
+	}
+
+	main {
+		width: 100vw;
+		height: 100vh;
+		background-color: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	main > div {
+		width: 500px;
+		height: 250px;
+		display: flex;
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+	}
+
+
+	p {
+		width: 250px;
+		height: 150px;
+		padding: 7px;
+		background-color: #CFD8DC;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	form {
+		background-color: #fff;
+		border-left: 2px dotted grey;
+		width: 250px;
+		height: 250px;
+		margin-top: 5px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;	
+	}
+
+	.tipoletra {
+		font-family: verdana, arial, sans-serif;
+	}
+
+	.corletrahf {
+		color: #fff;
+	}
+
+	.corletram {
+		color: #000;
+	}
+
+	.mletrah {
+		font-size: 16px;
+	}
+
+	.mletraf {
+		font-size: 18px;
+	}
+
+	.mletram {
+		font-size: 14px;
+	}
+
+	.negrito {
+		font-weight: bold;
+	}
+
+	#homebotao {
+		background-color: #FF9800;
+		border-radius: 50px;
+	}
+
+	#caixa {
+		width: 230px;
+		height: 25px;
+		border: 1px solid #000;
+		border-radius: 5px;
+		outline: none;
+		margin-top: 5px;
+	}
+
+	#botao {
+		width: 235px;
+		height: 25px;
+		margin-top: 5px;
+	}
+	
+</style>
+
+<body>
+
+	<header>
+		<div class="tipoletra corletrahf mletrah negrito">LOGO</div>
+
+		<ul> 
+			<li id="homebotao"><a class="tipoletra corletrahf mletrah" href="">Home</a></li>
+			<li><a class="tipoletra corletrahf mletrah" href="">Contato</a></li>
+			<li><a class="tipoletra corletrahf mletrah" href="">Sobre</a></li>
+		</ul>
+	</header>
+
+	<main>
+
+		<div>
+
+			<p class="tipoletra corletram mletram">"Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis officia illo dolor aliquam iste, assumenda sapiente, debitis quidem reprehenderit ipsam veritatis beatae distinctio atque cupiditate, nihil maiores qui, itaque enim."</p>
+			
+			<form name="cadastro" method="post">
+				<label class="tipoletra corletram mletram" for="caixa">Digite seu e-mail:</label>
+				<input id="caixa" placeholder="e-mail" type="text" name="">
+				<input id="botao" type="submit" name="">
+			</form>
+
+		</div>
+
+	</main>
+
+	<footer>
+		<div class="tipoletra corletrahf mletraf negrito">by TI - ACADEMY</div>
+	</footer>
+	
+</body>
+</html>

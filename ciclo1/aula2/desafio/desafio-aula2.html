@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Desafio 1</title>
+</head>
+
+<style>
+
+body {
+	margin: 0;
+	padding: 0;
+}
+	
+main {
+	width: 350px;
+	height: 0 auto;
+	background-color: #009688;
+	margin: auto;
+	margin-top: 130px;
+	display: flex;
+	padding: 3px;
+	flex-direction: column;
+}
+
+.quadrado {
+	width: 100px;
+	height: 100px;
+	background-color: #9C27B0;
+	}
+
+.retangulo {
+	width: 100%;
+	height: 100px;
+	margin-top: 30px;
+	display: flex;
+	justify-content: flex-end;
+}
+
+.circulo {
+	width: 100px;
+	height: 100px;
+	background-color: #FFC107;
+	border-radius: 100%;
+}
+	
+.disp-palavra {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: 000;
+	font-family: verdana, arial, cursive;
+	font-size: 12px;
+}
+
+#mouse {
+	cursor: pointer;
+}
+
+</style>
+
+<body>
+
+	<main>
+		<div class="quadrado disp-palavra" id="mouse">Quadrado</div>
+
+		<div class="retangulo">
+
+			<div class="circulo disp-palavra">Círculo</div>
+		
+		</div>
+
+	</main>
+	
+</body>
+</html>
