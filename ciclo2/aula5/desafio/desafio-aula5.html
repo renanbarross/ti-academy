@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" type="text/css" href="site2.css">
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+	<script src="busca_cep.js"></script>
+	<title>Document</title>
+</head>
+<body>
+	<header>
+		<h1>ME ACHA!</h1>
+		<h2>ENCONTRE ENDEREÇO PELO NÚMERO DE CEP</h2>
+
+		<div id="content-base" class="flex justify-content">
+			<div id="logo-principal" class="flex justify-content">
+				<span class="material-icons logo">travel_explore
+				</span>
+			</div>
+		</div>
+
+	</header>
+
+	<main>
+
+		<div id="conteudo-geral" class="flex justify-content">
+
+			<div class="box-custom flex justify-content">
+				<form>
+					<label>Cep
+						<input class="cxCep" type="" name="cep" value="">
+					</label>
+					<label>Rua
+						<input id="logradouro" type="" name="rua" value="">
+					</label>
+					<label>Bairro
+						<input id="bairro" type="" name="bairro" value="">
+					</label>
+					<label>Cidade
+						<input id="localidade" type="" name="cidade" value="">
+					</label>
+					<label>Estado
+						<input id="uf" type="" name="uf" value="">
+					</label>
+					<div class="display-btn flex justify-content">
+						<input id="btn" type="button" value="BUSCAR" name="buscar">
+					</div>
+				</form>
+			</div>
+
+		</div>
+	</main>
+
+	<footer></footer>
+	
+</body>
+</html>
