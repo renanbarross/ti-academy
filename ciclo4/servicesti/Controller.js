@@ -51,13 +51,13 @@ app.get('/pedidos', function(req,res){
 });*/
 
 //EXERCÍCIO 1 - AULA 4 - Visualize todos os clientes.
-/*app.get('/listaclientes', async(req,res)=>{
+app.get('/listaclientes', async(req,res)=>{
     await cliente.findAll({
         raw:true
     }).then(function(clientes){
         res.json({clientes})
     });
-});*/
+});
 
 //EXERCÍCIO 2 - AULA 4 - Visualize os clientes em ordem de antiguidade.
 /*app.get('/listaclientes', async(req,res)=>{
@@ -69,13 +69,13 @@ app.get('/pedidos', function(req,res){
 });*/
 
 //EXERCÍCIO 3 - AULA 4 - Visualize todos os pedidos.
-/*app.get('/listapedidos', async(req,res)=>{
+app.get('/listapedidos', async(req,res)=>{
     await pedido.findAll({
         raw:true
     }).then(function(pedidos){
         res.json({pedidos})
     });
-});*/
+});
 
 //EXERCÍCIO 4 - AULA 4 - Visualize o pedido por ordem a partir do maior valor.
 /*app.get('/listapedidos', async(req,res)=>{
@@ -123,6 +123,36 @@ app.get('/servico/:id', async(req,res)=>{
         return res.json({
             error: false,
             servico
+        });
+    }).catch(function(erro){
+        return res.status(400).json({
+            error: true,
+            message: "Código não está cadastrado!"
+        });
+    });
+});
+
+app.get('/cliente/:id', async(req,res)=>{
+    cliente.findByPk(req.params.id)
+    .then(cliente =>{
+        return res.json({
+            error: false,
+            cliente
+        });
+    }).catch(function(erro){
+        return res.status(400).json({
+            error: true,
+            message: "Código não está cadastrado!"
+        });
+    });
+});
+
+app.get('/pedido/:id', async(req,res)=>{
+    pedido.findByPk(req.params.id)
+    .then(pedido =>{
+        return res.json({
+            error: false,
+            pedido
         });
     }).catch(function(erro){
         return res.status(400).json({
@@ -390,7 +420,7 @@ app.get '/clientepedidos/:id'
 app.put '/editarpedidocliente'
 */
 
-let port=process.env.PORT || 3000;
+let port=process.env.PORT || 3001;
 
 app.listen(port,(req,res)=>{
     console.log('Servidor ativo');
