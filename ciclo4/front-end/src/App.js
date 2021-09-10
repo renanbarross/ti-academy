@@ -16,10 +16,15 @@ import {VisualizarServico} from './pages/Servico/VisualizarServico';
 import {CadastrarServico} from './pages/Servico/CadastrarServico';
 import {EditarServico} from './pages/Servico/EditarServico';
 import {ExcluirServico} from './pages/Servico/ExcluirServico';
+import { Menu } from './components/Menu';
+import { Servico } from './pages/Servico/Servico';
+import { Cliente } from './pages/Cliente/Cliente';
+import { Pedido } from './pages/Pedido/Pedido';
 
 function App() {
   return (
     <div>
+      <Menu/>
       <Router>
         <Switch>
 
@@ -29,16 +34,19 @@ function App() {
           <Route path="/cadastrarcliente" component={CadastrarCliente}/>
           <Route path="/editarcliente" component={EditarCliente}/>
           <Route path="/excluircliente" component={ExcluirCliente}/>
+          <Route path="/cliente/:id" component={Cliente}/>
 
           <Route path="/visualizarpedido" component={VisualizarPedido}/>
           <Route path="/cadastrarpedido" component={CadastrarPedido}/>
           <Route path="/editarpedido" component={EditarPedido}/>
           <Route path="/excluirpedido" component={ExcluirPedido}/>
+          <Route path="/pedido/:id" component={Pedido}/>
 
           <Route path="/visualizarservico" component={VisualizarServico}/>
           <Route path="/cadastrarservico" component={CadastrarServico}/>
           <Route path="/editarservico" component={EditarServico}/>
           <Route path="/excluirservico" component={ExcluirServico}/>
+          <Route path="/servico/:id" component={Servico}/>
           
         </Switch>
       </Router>
