@@ -17,25 +17,76 @@ app.get('/', function(req,res){
     res.send('Olá Mundo!');
 });
 
-app.post('/clientes', async(req,res)=>{
-    let create=await cliente.create(
+app.post('/clientes', async(req,res)=>{    
+    await cliente.create(
         req.body
-    );
-    res.send('Cliente foi inserido!');
+    ).then(() => {
+        return res.json({
+            type: "success",
+            message: "O cliente foi inserido!"
+        });
+    }).catch((erro) => {
+        return res.status(400).json({
+            type: "error",
+            message: "Erro ao inserir cliente."
+        });
+    });
+
+    await aguardar(3000);
+
+    function aguardar(ms){
+        return new Promise((resolve)=>{
+            setTimeout(resolve.ms);
+        });
+    };    
 });
 
-app.post('/servicos', async(req,res)=>{
-    let create=await servico.create(
+app.post('/servicos', async(req,res)=>{    
+    await servico.create(
         req.body
-    );
-    res.send('Serviço foi inserido!');
+    ).then(() => {
+        return res.json({
+            type: "success",
+            message: "O serviço foi inserido!"
+        });
+    }).catch((erro) => {
+        return res.status(400).json({
+            type: "error",
+            message: "Erro ao inserir serviço."
+        });
+    });
+
+    await aguardar(3000);
+
+    function aguardar(ms){
+        return new Promise((resolve)=>{
+            setTimeout(resolve.ms);
+        });
+    };    
 });
 
-app.post('/pedidos', async(req,res)=>{
-    let create=await pedido.create(
+app.post('/pedidos', async(req,res)=>{    
+    await pedido.create(
         req.body
-    );
-    res.send('Pedido foi inserido!');
+    ).then(() => {
+        return res.json({
+            type: "success",
+            message: "O pedido foi inserido!"
+        });
+    }).catch((erro) => {
+        return res.status(400).json({
+            type: "error",
+            message: "Erro ao inserir pedido."
+        });
+    });
+
+    await aguardar(3000);
+
+    function aguardar(ms){
+        return new Promise((resolve)=>{
+            setTimeout(resolve.ms);
+        });
+    };    
 });
 
 /*app.get('/clientes', function(req,res){
