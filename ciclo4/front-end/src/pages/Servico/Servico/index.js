@@ -18,7 +18,7 @@ export const Servico = (props) => {
                     setData(response.data.servico);
                 })
                 .catch(() => {
-                    console.log("Erro: Não foi possível conectar a API.")
+                    console.log("Erro: Não foi possível se conectar a API.")
                 })
         }
         getServico();

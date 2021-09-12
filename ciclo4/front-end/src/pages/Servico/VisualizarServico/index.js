@@ -21,7 +21,7 @@ export const VisualizarServico = () => {
             .catch(() => {
                 setStatus({
                     type: 'error',
-                    message: 'Erro: Não foi possível conectar a API.'
+                    message: 'Erro: Não foi possível se conectar a API.'
                 })
             });
     }
@@ -34,6 +34,17 @@ export const VisualizarServico = () => {
         <div className="p-3">
             <Container>
                 {status.type === 'error' ? <Alert color="danger">{status.message}</Alert> : ""}
+                <div className="d-flex">
+                    <div className="mr-auto p-2">
+                        <h1>Informações do Serviço</h1>
+                    </div>
+                    <div className="p-2">
+                        <Link to="/cadastrarservico"
+                            className="btn btn-outline-primary btn-sm">
+                            Cadastrar
+                        </Link>
+                    </div>
+                </div>
                 <Table striped>
                     <thead>
                         <tr>
@@ -50,8 +61,8 @@ export const VisualizarServico = () => {
                                 <td>{item.nome}</td>
                                 <td>{item.descricao}</td>
                                 <td className="text-center">
-                                    <Link to={"/servico/"+item.id}
-                                    className="btn btn-outline-primary btn-sm">Consultar</Link>
+                                    <Link to={"/servico/" + item.id}
+                                        className="btn btn-outline-primary btn-sm">Consultar</Link>
                                 </td>
                             </tr>
                         ))}
