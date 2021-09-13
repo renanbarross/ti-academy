@@ -247,7 +247,7 @@ app.get('/servicopedidos', async(req,res)=>{
     });
 });
 
-app.put('/editarpedido', (req,res)=>{
+app.put('/editarpedido_servId', (req,res)=>{
     pedido.update(req.body,{
         where: {ServicoId: req.body.ServicoId}
     }).then(function(){
@@ -294,7 +294,7 @@ edição de um cliente pelo método put.*/
             servico
         });
     });
-});    
+});*/    
 
 app.put('/editarcliente', (req,res)=>{
     cliente.update(req.body,{
@@ -310,7 +310,7 @@ app.put('/editarcliente', (req,res)=>{
             message: "Não foi possível modificar o cliente."
         });
     });
-});*/
+});
 
 /*EXERCÍCIO 3 - AULA 5 - Utilize a rota para consultar pedidos e faça a
 edição de um pedido pelo método put.*/
@@ -323,9 +323,9 @@ edição de um pedido pelo método put.*/
             pedido
         });
     });
-});
+});*/
 
-app.put('/editarpedido_ex', (req,res)=>{
+app.put('/editarpedido', (req,res)=>{
     pedido.update(req.body,{
         where: {id: req.body.id}
     }).then(function(){
@@ -339,11 +339,27 @@ app.put('/editarpedido_ex', (req,res)=>{
             message: "Não foi possível modificar o pedido."
         });
     });
-});*/
+});
 
 app.get('/excluircliente', async(req,res)=>{
     await cliente.destroy({
         where: {id: 2}
+    });
+});
+
+app.delete('/apagarservico/:id', (req,res)=>{
+    servico.destroy({
+        where: {id: req.params.id}
+    }).then(function(){
+        return res.json({
+            error: false,
+            message: "Servico foi excluído com sucesso."
+        });
+    }).catch(function(erro){
+        return res.status(400).json({
+            error: true,
+            message: "Não foi possível excluir o servico."
+        });
     });
 });
 
@@ -359,6 +375,22 @@ app.delete('/apagarcliente/:id', (req,res)=>{
         return res.status(400).json({
             error: true,
             message: "Não foi possível excluir o cliente."
+        });
+    });
+});
+
+app.delete('/apagarpedido/:id', (req,res)=>{
+    pedido.destroy({
+        where: {id: req.params.id}
+    }).then(function(){
+        return res.json({
+            error: false,
+            message: "Pedido foi excluído com sucesso."
+        });
+    }).catch(function(erro){
+        return res.status(400).json({
+            error: true,
+            message: "Não foi possível excluir o pedido."
         });
     });
 });
@@ -455,17 +487,19 @@ app.get '/quantpedidos'
 app.get '/listaservicos'
 app.get '/ofertas'
 app.get '/servico/:id'
+app.get '/cliente/:id'
+app.get '/pedido/:id'
 app.get '/atualizaservico'
 app.put '/editarservico'
 app.get '/servicopedidos'
-app.put '/editarpedido'
+app.put '/editarpedido_servId'
 app.get '/listapedidos/:id' ou '/servicoscliente'
-app.get '/cliente/:id'
 app.put '/editarcliente'
-app.get '/pedido/:id'
-app.put '/editarpedido_ex'
+app.put '/editarpedido'
 app.get '/excluircliente'
+app.delete '/apagarservico/:id'
 app.delete '/apagarcliente/:id'
+app.delete '/apagarpedido/:id'
 app.get '/somapedidos/:id'
 app.get '/clientepedidos/:id'
 app.put '/editarpedidocliente'
