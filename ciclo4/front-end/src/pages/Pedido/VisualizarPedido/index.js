@@ -26,6 +26,26 @@ export const VisualizarPedido = () => {
             });
     }
 
+    const apagarPedido = async(idPedido) =>{
+        console.log(idPedido);
+
+        const headers={
+            'Content-Type':'application/json'
+        }
+
+        await axios.delete(api+"/apagarpedido/"+idPedido,{headers})
+        .then((response)=>{
+            console.log(response.data.error);
+            getPedidos();
+        })
+        .catch(()=>{
+            setStatus({
+                type: 'error',
+                message: 'Erro: Não foi possível acessar a API.'
+            });
+        });
+    }
+
     useEffect(() => {
         getPedidos();
     }, []);
@@ -61,7 +81,11 @@ export const VisualizarPedido = () => {
                                 <td>{item.data}</td>
                                 <td className="text-center">
                                     <Link to={"/pedido/" + item.id}
-                                        className="btn btn-outline-primary btn-sm">Consultar</Link>
+                                        className="btn btn-outline-primary btn-sm m-1">Consultar</Link>
+                                    <Link to={"/editarpedido/" + item.id}
+                                        className="btn btn-outline-warning btn-sm m-1">Editar</Link>
+                                     <span className="btn btn-outline-danger btn-sm m-1"
+                                        onClick={() => apagarPedido(item.id)}>Excluir</span>
                                 </td>
                             </tr>
                         ))}
